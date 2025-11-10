@@ -126,24 +126,24 @@ private:
     }
     
     // Height
-    // int height(Node* node) {
-    //     if (node == nullptr) {
-    //         return -1; // Height of empty tree is -1
-    //     }
-        
-    //     int leftHeight = height(node->left);
-    //     int rightHeight = height(node->right);
-        
-    //     return max(leftHeight, rightHeight) + 1;
-    // }
-    
-    // Count nodes helper
-    int countNodesHelper(Node* node) {
+    int height(Node* node) {
         if (node == nullptr) {
-            return 0;
+            return -1; // Height of empty tree is -1
         }
-        return 1 + countNodesHelper(node->left) + countNodesHelper(node->right);
+        
+        int leftHeight = height(node->left);
+        int rightHeight = height(node->right);
+        
+        return max(leftHeight, rightHeight) + 1;
     }
+    
+    // Count nodes
+    // int countNodes(Node* node) {
+    //     if (node == nullptr) {
+    //         return 0;
+    //     }
+    //     return 1 + countNodesHelper(node->left) + countNodesHelper(node->right);
+    // }
     
     // Destroy tree helper
     void destroyTree(Node* node) {
