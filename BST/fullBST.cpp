@@ -35,37 +35,37 @@ private:
     }
     
     // Helper function for deletion
-    // Node* deleteHelper(Node* node, int val) {
-    //     if (node == nullptr) {
-    //         return nullptr;
-    //     }
+    Node* deleteHelper(Node* node, int val) {
+        if (node == nullptr) {
+            return nullptr;
+        }
         
-    //     if (val < node->data) {
-    //         node->left = deleteHelper(node->left, val);
-    //     } else if (val > node->data) {
-    //         node->right = deleteHelper(node->right, val);
-    //     } else {
-    //         // Node to be deleted found
+        if (val < node->data) {
+            node->left = deleteHelper(node->left, val);
+        } else if (val > node->data) {
+            node->right = deleteHelper(node->right, val);
+        } else {
+            // Node to be deleted found
             
-    //         // Case 1: No child or one child
-    //         if (node->left == nullptr) {
-    //             Node* temp = node->right;
-    //             delete node;
-    //             return temp;
-    //         } else if (node->right == nullptr) {
-    //             Node* temp = node->left;
-    //             delete node;
-    //             return temp;
-    //         }
+            // Case 1: No child or one child
+            if (node->left == nullptr) {
+                Node* temp = node->right;
+                delete node;
+                return temp;
+            } else if (node->right == nullptr) {
+                Node* temp = node->left;
+                delete node;
+                return temp;
+            }
             
-    //         // Case 2: Two children
-    //         Node* temp = findMin(node->right);
-    //         node->data = temp->data;
-    //         node->right = deleteHelper(node->right, temp->data);
-    //     }
+            // Case 2: Two children
+            Node* temp = findMin(node->right);
+            node->data = temp->data;
+            node->right = deleteHelper(node->right, temp->data);
+        }
         
-    //     return node;
-    // }
+        return node;
+    }
     
     // Find minimum value node
     Node* findMin(Node* node) {
