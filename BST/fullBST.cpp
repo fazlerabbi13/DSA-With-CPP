@@ -146,13 +146,13 @@ private:
     }
     
     // Destroy tree
-    // void destroyTree(Node* node) {
-    //     if (node != nullptr) {
-    //         destroyTree(node->left);
-    //         destroyTree(node->right);
-    //         delete node;
-    //     }
-    // }
+    void destroyTree(Node* node) {
+        if (node != nullptr) {
+            destroyTree(node->left);
+            destroyTree(node->right);
+            delete node;
+        }
+    }
     
 public:
     BST() {
@@ -175,7 +175,7 @@ public:
     
     // Search for a value
     bool search(int val) {
-        return searchHelper(root, val);
+        return search(root, val);
     }
     
     // Find minimum value
@@ -196,13 +196,13 @@ public:
     
     // Inorder traversal
     void inorder() {
-        inorderHelper(root);
+        inorder(root);
         cout << endl;
     }
     
     // Preorder traversal
     void preorder() {
-        preorderHelper(root);
+        preorder(root);
         cout << endl;
     }
     
@@ -213,29 +213,29 @@ public:
     }
     
     // Level order traversal (BFS)
-    void levelOrder() {
-        if (root == nullptr) {
-            return;
-        }
+    // void levelOrder() {
+    //     if (root == nullptr) {
+    //         return;
+    //     }
         
-        queue<Node*> q;
-        q.push(root);
+    //     queue<Node*> q;
+    //     q.push(root);
         
-        while (!q.empty()) {
-            Node* current = q.front();
-            q.pop();
+    //     while (!q.empty()) {
+    //         Node* current = q.front();
+    //         q.pop();
             
-            cout << current->data << " ";
+    //         cout << current->data << " ";
             
-            if (current->left != nullptr) {
-                q.push(current->left);
-            }
-            if (current->right != nullptr) {
-                q.push(current->right);
-            }
-        }
-        cout << endl;
-    }
+    //         if (current->left != nullptr) {
+    //             q.push(current->left);
+    //         }
+    //         if (current->right != nullptr) {
+    //             q.push(current->right);
+    //         }
+    //     }
+    //     cout << endl;
+    // }
     
     // Get height of tree
     int height() {
