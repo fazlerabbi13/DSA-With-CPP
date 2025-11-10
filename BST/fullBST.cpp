@@ -84,19 +84,19 @@ private:
     }
     
     // Search helper
-    // bool searchHelper(Node* node, int val) {
-    //     if (node == nullptr) {
-    //         return false;
-    //     }
+    bool searchHelper(Node* node, int val) {
+        if (node == nullptr) {
+            return false;
+        }
         
-    //     if (node->data == val) {
-    //         return true;
-    //     } else if (val < node->data) {
-    //         return searchHelper(node->left, val);
-    //     } else {
-    //         return searchHelper(node->right, val);
-    //     }
-    // }
+        if (node->data == val) {
+            return true;
+        } else if (val < node->data) {
+            return searchHelper(node->left, val);
+        } else {
+            return searchHelper(node->right, val);
+        }
+    }
     
     // Inorder traversal helper (Left-Root-Right)
     void inorderHelper(Node* node) {
