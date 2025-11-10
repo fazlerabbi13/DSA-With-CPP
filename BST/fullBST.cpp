@@ -68,12 +68,12 @@ private:
     }
     
     // Find minimum value node
-    Node* findMin(Node* node) {
-        while (node->left != nullptr) {
-            node = node->left;
-        }
-        return node;
-    }
+    // Node* findMin(Node* node) {
+    //     while (node->left != nullptr) {
+    //         node = node->left;
+    //     }
+    //     return node;
+    // }
     
     // Find maximum value node
     Node* findMax(Node* node) {
