@@ -108,22 +108,22 @@ private:
     }
     
     // Preorder traversal helper (Root-Left-Right)
-    // void preorderHelper(Node* node) {
-    //     if (node != nullptr) {
-    //         cout << node->data << " ";
-    //         preorderHelper(node->left);
-    //         preorderHelper(node->right);
-    //     }
-    // }
-    
-    // Postorder traversal helper (Left-Right-Root)
-    void postorderHelper(Node* node) {
+    void preorderHelper(Node* node) {
         if (node != nullptr) {
-            postorderHelper(node->left);
-            postorderHelper(node->right);
             cout << node->data << " ";
+            preorderHelper(node->left);
+            preorderHelper(node->right);
         }
     }
+    
+    // Postorder traversal helper (Left-Right-Root)
+    // void postorderHelper(Node* node) {
+    //     if (node != nullptr) {
+    //         postorderHelper(node->left);
+    //         postorderHelper(node->right);
+    //         cout << node->data << " ";
+    //     }
+    // }
     
     // Height helper
     int heightHelper(Node* node) {
