@@ -138,21 +138,21 @@ private:
     }
     
     // Count nodes
-    // int countNodes(Node* node) {
-    //     if (node == nullptr) {
-    //         return 0;
-    //     }
-    //     return 1 + countNodesHelper(node->left) + countNodesHelper(node->right);
-    // }
-    
-    // Destroy tree helper
-    void destroyTree(Node* node) {
-        if (node != nullptr) {
-            destroyTree(node->left);
-            destroyTree(node->right);
-            delete node;
+    int countNodes(Node* node) {
+        if (node == nullptr) {
+            return 0;
         }
+        return 1 + countNodes(node->left) + countNodes(node->right);
     }
+    
+    // Destroy tree
+    // void destroyTree(Node* node) {
+    //     if (node != nullptr) {
+    //         destroyTree(node->left);
+    //         destroyTree(node->right);
+    //         delete node;
+    //     }
+    // }
     
 public:
     BST() {
