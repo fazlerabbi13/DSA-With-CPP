@@ -117,25 +117,25 @@ private:
     }
     
     // Postorder traversal helper (Left-Right-Root)
-    // void postorderHelper(Node* node) {
-    //     if (node != nullptr) {
-    //         postorderHelper(node->left);
-    //         postorderHelper(node->right);
-    //         cout << node->data << " ";
-    //     }
-    // }
-    
-    // Height helper
-    int heightHelper(Node* node) {
-        if (node == nullptr) {
-            return -1; // Height of empty tree is -1
+    void postorderHelper(Node* node) {
+        if (node != nullptr) {
+            postorderHelper(node->left);
+            postorderHelper(node->right);
+            cout << node->data << " ";
         }
-        
-        int leftHeight = heightHelper(node->left);
-        int rightHeight = heightHelper(node->right);
-        
-        return max(leftHeight, rightHeight) + 1;
     }
+    
+    // Height
+    // int height(Node* node) {
+    //     if (node == nullptr) {
+    //         return -1; // Height of empty tree is -1
+    //     }
+        
+    //     int leftHeight = height(node->left);
+    //     int rightHeight = height(node->right);
+        
+    //     return max(leftHeight, rightHeight) + 1;
+    // }
     
     // Count nodes helper
     int countNodesHelper(Node* node) {
