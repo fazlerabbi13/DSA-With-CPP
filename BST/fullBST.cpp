@@ -84,7 +84,7 @@ private:
     }
     
     // Search helper
-    bool searchHelper(Node* node, int val) {
+    bool search(Node* node, int val) {
         if (node == nullptr) {
             return false;
         }
@@ -92,20 +92,20 @@ private:
         if (node->data == val) {
             return true;
         } else if (val < node->data) {
-            return searchHelper(node->left, val);
+            return search(node->left, val);
         } else {
-            return searchHelper(node->right, val);
+            return search(node->right, val);
         }
     }
     
     // Inorder traversal helper (Left-Root-Right)
-    void inorderHelper(Node* node) {
-        if (node != nullptr) {
-            inorderHelper(node->left);
-            cout << node->data << " ";
-            inorderHelper(node->right);
-        }
-    }
+    // void inorderHelper(Node* node) {
+    //     if (node != nullptr) {
+    //         inorderHelper(node->left);
+    //         cout << node->data << " ";
+    //         inorderHelper(node->right);
+    //     }
+    // }
     
     // Preorder traversal helper (Root-Left-Right)
     void preorderHelper(Node* node) {
