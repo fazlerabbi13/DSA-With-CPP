@@ -213,29 +213,29 @@ public:
     }
     
     // Level order traversal (BFS)
-    // void levelOrder() {
-    //     if (root == nullptr) {
-    //         return;
-    //     }
+    void levelOrder() {
+        if (root == nullptr) {
+            return;
+        }
         
-    //     queue<Node*> q;
-    //     q.push(root);
+        queue<Node*> q;
+        q.push(root);
         
-    //     while (!q.empty()) {
-    //         Node* current = q.front();
-    //         q.pop();
+        while (!q.empty()) {
+            Node* current = q.front();
+            q.pop();
             
-    //         cout << current->data << " ";
+            cout << current->data << " ";
             
-    //         if (current->left != nullptr) {
-    //             q.push(current->left);
-    //         }
-    //         if (current->right != nullptr) {
-    //             q.push(current->right);
-    //         }
-    //     }
-    //     cout << endl;
-    // }
+            if (current->left != nullptr) {
+                q.push(current->left);
+            }
+            if (current->right != nullptr) {
+                q.push(current->right);
+            }
+        }
+        cout << endl;
+    }
     
     // Get height of tree
     int height() {
